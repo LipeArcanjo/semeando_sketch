@@ -24,6 +24,10 @@
 
         <activity android:name=".activities.LoginPageActivity" />
         <activity android:name=".activities.RegisterPageActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.UserPageActivity" />
+        <activity android:name=".activities.DevsPageActivity" />
+
     </application>
 
 </manifest>

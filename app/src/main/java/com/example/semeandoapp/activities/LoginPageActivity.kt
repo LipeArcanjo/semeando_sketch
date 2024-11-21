@@ -49,5 +49,8 @@ class LoginPageActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterPageActivity::class.java)
             startActivity(intent)
         }
+
+
+
     }
 }
