@@ -40,6 +40,7 @@ dependencies {
 
     // Import the Firebase BoM
     implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.database)
 
     // When using the BoM, you don't specify versions in Firebase library dependencies
 

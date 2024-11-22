@@ -1,0 +1,57 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Campo para RM -->
+    <EditText
+        android:id="@+id/rmInput"
+        android:layout_width="303dp"
+        android:layout_height="50dp"
+        android:hint="RM"
+        android:inputType="text" />
+
+    <!-- Campo para Nome -->
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Nome"
+        android:inputType="text" />
+
+    <!-- Campo para Cidade -->
+    <EditText
+        android:id="@+id/cityInput"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Cidade"
+        android:inputType="text" />
+
+    <!-- Campo para Instituição -->
+    <EditText
+        android:id="@+id/institutionInput"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Instituição"
+        android:inputType="text" />
+
+    <!-- Campo para GitHub -->
+    <EditText
+        android:id="@+id/githubInput"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="GitHub"
+        android:inputType="textUri" />
+
+    <!-- Botão de Salvar -->
+    <Button
+        android:id="@+id/saveDevButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#12664F"
+        android:text="Salvar"
+        android:textColor="@android:color/white" />
+</LinearLayout>
