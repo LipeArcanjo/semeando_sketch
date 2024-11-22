@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@id/semeandoTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/user_placeholder" />
 
     <!-- Campo Nome -->
     <EditText
@@ -72,8 +72,6 @@
         app:layout_constraintTop_toBottomOf="@id/usernameInput">
 
         <!-- Pontos -->
-
-        <!-- Rank Mundial -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="60dp"
@@ -100,6 +98,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Rank Mundial -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="60dp"
@@ -172,14 +171,14 @@
     <EditText
         android:id="@+id/bioInput"
         android:layout_width="300dp"
-        android:layout_height="110dp"
+        android:layout_height="130dp"
         android:layout_marginTop="16dp"
+        android:gravity="top"
         android:hint="Digite sua biografia"
         android:inputType="textMultiLine"
-        android:gravity="top"
-        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/emailInput" />
 
     <!-- Botão Salvar -->
     <Button
@@ -195,6 +194,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bioInput" />
 
+    <!-- Menu de nav -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
