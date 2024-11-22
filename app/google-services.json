@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "266049998738",
+    "project_id": "semeando-mobile-b22f3",
+    "storage_bucket": "semeando-mobile-b22f3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266049998738:android:8a04ea698a82e958097b4b",
+        "android_client_info": {
+          "package_name": "com.example.semeandoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRW_tKc4-hRIsv5gzsbCj7xoZjUqwB1o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
