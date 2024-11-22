@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Imagem do dev -->
+        <ImageView
+            android:id="@+id/devImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Imagem do Desenvolvedor" />
+
+        <!-- Informações do dev -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <!-- RM da FIAP do dev -->
+            <TextView
+                android:id="@+id/devRM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RM: 123456"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <!-- Nome do dev -->
+            <TextView
+                android:id="@+id/devName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Dev"
+                android:textSize="16sp"
+                android:textColor="#12664F"
+                android:textStyle="bold" />
+
+            <!-- Cidade do dev -->
+            <TextView
+                android:id="@+id/devCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cidade"
+                android:textSize="14sp"
+                android:textColor="#666666" />
+
+            <!-- Faculdade do dev -->
+            <TextView
+                android:id="@+id/devInstitution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instituição"
+                android:textSize="14sp"
+                android:textColor="#666666" />
+
+            <!-- Github do dev -->
+            <TextView
+                android:id="@+id/devGithub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Github"
+                android:textSize="14sp"
+                android:textColor="#666666" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
