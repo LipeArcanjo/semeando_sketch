@@ -1,6 +1,8 @@
 package com.example.semeandoapp.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +11,9 @@ import com.example.semeandoapp.adapters.DevAdapter
 import com.example.semeandoapp.models.Dev
 import com.example.semeandoapp.utils.MenuNavigation
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class DevsPageActivity : AppCompatActivity() {
 
@@ -32,5 +37,13 @@ class DevsPageActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.devsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = DevAdapter(devsList)
+
+        val logoutButton = findViewById<Button>(R.id.logoutButton)
+
+        logoutButton.setOnClickListener {
+            Firebase.auth.signOut()
+            val intent = Intent(this, SplashScreenActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

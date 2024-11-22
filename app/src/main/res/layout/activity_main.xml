@@ -31,6 +31,20 @@
         app:layout_constraintTop_toTopOf="@id/logoImage"
         app:layout_constraintBottom_toBottomOf="@id/logoImage" />
 
+    <!-- Logout button -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#66FF0000"
+        android:text="Sair"
+        android:textColorLink="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toEndOf="@+id/semeandoTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Seção de Quiz -->
     <TextView
         android:id="@+id/quizTitle"
