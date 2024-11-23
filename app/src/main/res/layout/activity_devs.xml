@@ -30,16 +30,46 @@
         app:layout_constraintTop_toTopOf="@id/logoImage"
         app:layout_constraintBottom_toBottomOf="@id/logoImage" />
 
+    <!-- Logout button -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#66FF0000"
+        android:text="Sair"
+        android:textColorLink="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toEndOf="@+id/semeandoTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- RecyclerView -->
+
+
+    <!-- FloatingActionButton para adicionar novos devs -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/devsRecyclerView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/logoImage"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="800dp"
+        app:layout_constraintBottom_toTopOf="@id/addDevFab"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addDevFab"
+        android:contentDescription="Add dev"
+        android:src="@android:drawable/ic_menu_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Menu de nav -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

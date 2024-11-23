@@ -12,4 +12,5 @@
         android:id="@+id/nav_devs"
         android:icon="@android:drawable/ic_menu_call"
         android:title="Devs" />
+
 </menu>

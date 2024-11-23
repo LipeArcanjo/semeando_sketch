@@ -3,46 +3,48 @@ package com.example.semeandoapp.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.semeandoapp.R
 import com.example.semeandoapp.models.Dev
 
-// Adaptador para o RecyclerView, responsável por iterar a lista de desenvolvedores
-class DevAdapter(private val devsList: List<Dev>) : RecyclerView.Adapter<DevAdapter.DevViewHolder>() {
+class DevAdapter(
+    private val devList: List<Dev>,
+    private val onMenuClick: (View, Dev) -> Unit
+) : RecyclerView.Adapter<DevAdapter.DevViewHolder>() {
 
-    // Cria uma nova ViewHolder quando for necessário
+    class DevViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val name: TextView = itemView.findViewById(R.id.devName)
+        val rm: TextView = itemView.findViewById(R.id.devRM)
+        val city: TextView = itemView.findViewById(R.id.devCity)
+        val institution: TextView = itemView.findViewById(R.id.devInstitution)
+        val github: TextView = itemView.findViewById(R.id.devGithub)
+        val image: ImageView = itemView.findViewById(R.id.devImage)
+        val menuButton: ImageButton = itemView.findViewById(R.id.menuButton)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DevViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_dev, parent, false)
         return DevViewHolder(view)
     }
 
-    // Função para vincular os dados do nosso querido dev a uma posição específica na lista
     override fun onBindViewHolder(holder: DevViewHolder, position: Int) {
-        val dev = devsList[position]
-        holder.bind(dev)
-    }
+        val dev = devList[position]
+        holder.name.text = dev.name
+        holder.rm.text = dev.rm
+        holder.city.text = dev.city
+        holder.institution.text = dev.institution
+        holder.github.text = dev.github
+        // Assumindo que as imagens estão no drawable
+        val resId = holder.itemView.context.resources.getIdentifier(dev.imageResId, "drawable", holder.itemView.context.packageName)
+        holder.image.setImageResource(resId)
 
-    // Retorna o número total de itens na lista
-    override fun getItemCount(): Int = devsList.size
-
-    class DevViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val devImage: ImageView = itemView.findViewById(R.id.devImage)
-        private val devName: TextView = itemView.findViewById(R.id.devName)
-        private val devRM: TextView = itemView.findViewById(R.id.devRM)
-        private val devCity: TextView = itemView.findViewById(R.id.devCity)
-        private val devInstitution: TextView = itemView.findViewById(R.id.devInstitution)
-        private val devGithub: TextView = itemView.findViewById(R.id.devGithub)
-
-        // Método que vai vincular os dados do objeto Dev (na models) ao front-end
-        fun bind(dev: Dev) {
-            devImage.setImageResource(dev.imageResId)
-            devName.text = dev.name
-            devRM.text = dev.rm
-            devCity.text = dev.city
-            devInstitution.text = dev.institution
-            devGithub.text = dev.github
+        holder.menuButton.setOnClickListener {
+            onMenuClick(it, dev)
         }
     }
+
+    override fun getItemCount(): Int = devList.size
 }

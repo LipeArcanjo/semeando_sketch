@@ -1,5 +1,6 @@
 package com.example.semeandoapp.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.semeandoapp.R
 import com.example.semeandoapp.utils.MenuNavigation
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class UserPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +28,7 @@ class UserPageActivity : AppCompatActivity() {
         val emailInput = findViewById<EditText>(R.id.emailInput)
         val bioInput = findViewById<EditText>(R.id.bioInput)
         val saveButton = findViewById<Button>(R.id.saveButton)
+        val logoutButton = findViewById<Button>(R.id.logoutButton)
 
         // Função para salvar os dados
         saveButton.setOnClickListener {
@@ -37,6 +42,12 @@ class UserPageActivity : AppCompatActivity() {
 
             // Apenas para depuração
             println("Username: $updatedUsername, Email: $updatedEmail, Bio: $updatedBio")
+        }
+
+        logoutButton.setOnClickListener {
+            Firebase.auth.signOut()
+            val intent = Intent(this, SplashScreenActivity::class.java)
+            startActivity(intent)
         }
     }
 }
